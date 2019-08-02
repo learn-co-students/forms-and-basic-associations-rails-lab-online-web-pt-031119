@@ -19,11 +19,14 @@ class Song < ActiveRecord::Base
     self.genre ? self.genre.name : nil
   end
 
-  def notes_1=(note)
-    self.notes = Note.find_or_create_by(content: note)
+  def note_contents=(note_entries)
+    note_entries.each do |content|
+      note = Note.find_or_create_by(content: content)
+      self.notes << note
+    end
   end
 
-  def notes_1
+  def note_contents
     self.notes ? self.notes.content : nil
   end
 
