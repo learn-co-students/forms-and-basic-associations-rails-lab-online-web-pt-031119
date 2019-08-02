@@ -8,8 +8,8 @@
   <%= f.label :genre_id%>
   <%= f.collection_select :genre_id, Genre.all, :name, :name%>
   <%= f.label :notes_1%>
-  <input id='song_notes_1' type='text' name='note_contents[]'></input>
-  <input id='song_notes_2' type='text' name='note_contents[]'></input>
+  <input id='song_notes_1' type='text' name='song[note_contents][]'/>
+  <input id='song_notes_2' type='text' name='song[note_contents][]'/>
   
   <br>
 
